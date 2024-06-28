@@ -53,7 +53,7 @@ Some of these best practices have been incorporated in auxiliary programs (from 
 ### What is included in this repo?
 
 - A basic project directory structure with some placeholder Python files (`modern_python`, `tests`)
-- A set of standard files (in capital letters, e.g. LICENSE, CHANGELOG) that regulate 
+- A set of standard files (in capital letters, e.g. LICENSE, CHANGELOG) for metadata about the repository
 - A `pyproject.toml` file that manages metadata, versioning, dependencies, environments, and plugins. This file is also used by `hatch` for setting up environments (`default`, `dev`), download and installation of dependencies.
 - A `.pre-commit-config.yaml` file that manages the plugins for linting (`ruff-check`), formatting (`ruff-format`), type hinting (`mypy`), and testing (`pytest`). If `pre-commit` is activated, this suite of programs is performed with each `git commmit`.
 
