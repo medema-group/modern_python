@@ -1,6 +1,8 @@
 modern_python
 =========
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12684030.svg)](https://doi.org/10.5281/zenodo.12684030)
+
 This repository serves as inspiration/template for setting up your own modern python project.
 It uses [hatch](https://hatch.pypa.io/latest/) as a project manager.
 `hatch` sets up a virtual environment, installs the correct Python version, downloads and installs the dependencies, and runs the program.
