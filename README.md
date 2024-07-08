@@ -2,6 +2,7 @@ modern_python
 =========
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12684030.svg)](https://doi.org/10.5281/zenodo.12684030)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12684157.svg)](https://doi.org/10.5281/zenodo.12684157)
 
 This repository serves as inspiration/template for setting up your own modern python project.
 It uses [hatch](https://hatch.pypa.io/latest/) as a project manager.
