@@ -7,18 +7,17 @@ TODO: ADD COPYRIGHT TEXT
 
 import logging
 import sys
-from importlib import metadata
 
 import coloredlogs
 
 
 def config_logger() -> logging.Logger:
-    """Set up a named logger with nice formatting
+    """Set up a module-specific logger with nice formatting
 
     :return
         A Logger object
     """
-    logger = logging.getLogger("modern_python")
+    logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(
@@ -33,8 +32,7 @@ def config_logger() -> logging.Logger:
 def main() -> None:
     """Function to execute main body of code"""
     logger = config_logger()
-    logger.info(f"Started 'modern python' CLI v{metadata.version('modern_python')}.")
-    logger.debug("Hello, world!")
+    logger.debug("Hello, world")
 
 
 if __name__ == "__main__":
