@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: your_awesome_project
+message: >-
+  If you use this software, please cite the referenced
+  paper.
+type: software
+authors:
+  - address: '1234 Darwin Drive, 99999 City, Fantasia'
+    affiliation: 'Institute for Awesome Science'
+    family-names: Jon
+    given-names: Doe
+    orcid: 'https://orcid.org/0000-0001-2345-6789'
+repository-code: 'https://github.com/mite-standard/mite_web'
+abstract: >-
+    A repository containing a template for modern Python projects.
+keywords:
+  - python
+  - template
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - address: '1234 Darwin Drive, 99999 City, Fantasia'
+      affiliation: 'Institute for Awesome Science'
+      family-names: Jon
+      given-names: Doe
+      orcid: 'https://orcid.org/0000-0001-2345-6789'
+  title: 'Your awesome title'
+  journal: Your awesome Journal
+  year: 2025
+  doi: 10.1000/00/00000

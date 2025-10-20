@@ -12,7 +12,7 @@ Contents
 
 ## Overview
 
-This repository serves as a template for setting up Python3-based projects in a modern way. This includes:
+This repository serves as a template for setting up Python3-based (research software) projects in a modern way. This includes:
 
 - A directory structure appropriate for package installation and publishing via e.g. PyPI
 - Metadata files following community guidelines (Readme, License, Code of Conduct, Changelog, Citation file)
@@ -20,7 +20,10 @@ This repository serves as a template for setting up Python3-based projects in a 
 - Minimal CI/CD (Continuous Integration) using GitHub Actions
 - A pre-formatted logger
 
-To see how you can adopt this template for your project, see next section
+This template has been set up for use in the [Medema group](https://github.com/medema-group), but is also generally applicable.
+Sections that specifically address members of the Medema group are marked with a **{Medema-Group}** tag.
+
+To see how you can adopt this template for your project, see next section.
 
 ## How to use
 
@@ -48,7 +51,7 @@ Currently, the best package manager is `uv`: lightweight and extremely fast.
 `uv` will create a virtual environment (to keep your packages from messing up your OS) and install your packages.
 Importantly, it will also set up a `uv.lock` lockfile, which specifies all your packages *and the packages your packages rely on*, making your installation truly reproducible. 
 
-Let`s install your package with `uv` and do a test-run:
+Let's install your package with `uv` and do a test-run:
 
 ```commandline
 uv sync
@@ -57,9 +60,71 @@ uv run python src/your_cool_project/main.py
 
 You should see a logging message saying `Hello, world`.
 
-If you see errors, it is likely that you did not rename the `src/your_cool_project` folder accoding to the newly chosen name for your project
+If you see errors, it is likely that you did not rename the `src/your_cool_project` folder according to the newly chosen name for your project
 
-### 3. Adjust the metadata files
+### 3. Set up `pre-commit`
+
+Once your project is installed, you can set up `pre-commit`. 
+This small helper program runs a suite of additional tools to lint your code, perform checks, and run tests **BEFORE** you commit your code.
+You can adjust the programs by editing [.pre-commit-config](./.pre-commit-config.yaml) or changing their settings in the [pyproject.toml](./pyproject.toml) file.
+
+To set up `pre-commit`, run:
+
+```commandline
+uv run pre-commit install
+```
+
+From now on, checks will run on every commit. 
+You can override the checks with `git commit -m "<your message>" --no-verify`.
+
+
+### 4. Adjust the metadata files
+
+Now that the basics are set up, it is time to adjust the metadata files. 
+These are extremely important from the perspective of research software following FAIR (Findable, Accessible, Interoperable, Reusable) principles.
+
+#### README
+
+The `README` file is the main documentation for your repository.
+A well-crafted `README` will present the most important aspects at one glance and facilitate interaction with your code.
+
+##### TO DO
+
+- [ ] Adjust the [README_TEMPLATE](./README_TEMPLATE.md) to your needs and replace the current `README`.
+
+#### LICENSE
+
+A `LICENSE` file specifies under which conditions people can use the research software. 
+A repository without `LICENSE` file can't be reasonably used.
+
+While there are many licenses available, the most common types are [CC BY NC](https://creativecommons.org/licenses/by-nc/4.0/deed), [CC BY](https://creativecommons.org/licenses/by/4.0/deed.en), and [CC0 (public domain)](https://creativecommons.org/public-domain/cc0/).
+In the **{Medema-Group}**, we usually use a CC BY license that is compatible with the WUR guidelines, such as the [MIT](https://opensource.org/license/mit) or the [Apache 2.0](https://opensource.org/license/apache-2-0) licenses.
+For instance, this template is licensed using the `UNLICENSE` (a type of `CC0`), allowing free use without crediting the creator.
+
+If you are unsure what to pick, you can consult [this handy license picker](https://creativecommons.org/chooser/).
+
+##### TO DO
+
+- [ ] Replace the current `LICENSE` file with one of your choosing.
+
+#### CITATION
+
+In most cases, you want others to cite your work. 
+To facilitate this, it is common practice to include a [CITATION.cff](./CITATION.cff) file.
+This file specifies to whom credit is due, and also allows to cross-reference journal articles.
+
+You can easily create your own `CITATION.cff` file using [CFF INIT](https://citation-file-format.github.io/cff-initializer-javascript/#/).
+
+##### TO DO
+
+- [ ] Replace the current dummy `CITATION.cff` file with your own.
+
+##### CHANGELOG
+
+[Keeping a changelog](https://keepachangelog.com/en/1.1.0/) is essential for letting people know what has changed between versions.
+Nobody likes to look at Git commit messages to figure out why their code does not work anymore.
+
+
 
 
 
