@@ -44,7 +44,7 @@ First, lets modify the [pyproject.toml](./pyproject.toml) file:
 ### 2. Install your project
 
 Your Python project should be easily installable, to ensure that it is portable. 
-Currently, the best package manager is `uv`: lightweight and extremely fast. 
+Currently, the best package manager is `uv`, which is lightweight and extremely fast. 
 `uv` will create a virtual environment (to keep your packages from messing up your OS) and install your packages.
 Importantly, it will also set up a `uv.lock` lockfile, which specifies all your packages *and the packages your packages rely on*, making your installation truly reproducible. 
 
@@ -158,7 +158,7 @@ There are of course many additional things you can do to make your project shine
 
 - Subclass with [Pydantic](https://docs.pydantic.dev/latest/) to benefit from an extensive data validation library.
 - Implement type checking with [MyPy](https://mypy-lang.org/) to make your code more readable.
-- Build auto-documentation using [Sphinx](https://www.sphinx-doc.org/en/master/)
+- Build auto-documentation using [Sphinx](https://www.sphinx-doc.org/en/master/).
 - ...
 
 ## Attribution
