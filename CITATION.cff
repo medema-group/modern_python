@@ -1,31 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-title: your_awesome_project
+title: Modern Python
 message: >-
-  If you use this software, please cite the referenced
-  paper.
+  This package acts as a template for creating modern Python
+  projects. It is released to the public domain under the
+  Unlicense. You do not need to reference the creator of
+  this record.
 type: software
 authors:
-  - address: '1234 Darwin Drive, 99999 City, Fantasia'
-    affiliation: 'Institute for Awesome Science'
-    family-names: Jon
-    given-names: Doe
-    orcid: 'https://orcid.org/0000-0001-2345-6789'
-repository-code: 'https://github.com/mite-standard/mite_web'
+  - given-names: Mitja M
+    family-names: Zdouc
+    affiliation: Wageningen University & Research
+    orcid: 'https://orcid.org/0000-0001-6534-6609'
+repository-code: 'https://github.com/medema-group/modern_python'
+url: 'https://github.com/medema-group'
 abstract: >-
-    A repository containing a template for modern Python projects.
+  This repository acts as a template to set up modern Python
+  projects. For more information, see the README.md file
 keywords:
-  - python
-  - template
-license: MIT
-preferred-citation:
-  type: article
-  authors:
-    - address: '1234 Darwin Drive, 99999 City, Fantasia'
-      affiliation: 'Institute for Awesome Science'
-      family-names: Jon
-      given-names: Doe
-      orcid: 'https://orcid.org/0000-0001-2345-6789'
-  title: 'Your awesome title'
-  journal: Your awesome Journal
-  year: 2025
-  doi: 10.1000/00/00000
+  - Python
+  - Software engineering
+license: Unlicense
