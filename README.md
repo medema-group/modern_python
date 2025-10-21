@@ -1,9 +1,6 @@
 modern_python
 =========
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12684157.svg)](https://doi.org/10.5281/zenodo.12684157)
-
-
 Contents
 -----------------
 - [Overview](#overview)
