@@ -1,6 +1,6 @@
 [project]
-name = "modern_python"
-version = "1.0.1"
+name = "your_cool_project"
+version = "2.0.0"
 description = "Example repository demonstrating a modern Python project setup"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -10,28 +10,30 @@ authors = [
 ]
 
 dependencies = [
-    "coloredlogs~=15.0.1",
+    "coloredlogs~=15.0",
+    "pre-commit~=4.3",
+    "pytest~=8.4",
+    "ruff~=0.13"
 ]
+
+# Below are settings for different tools we use for testing and linting
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[project.scripts]
-modern_python = "modern_python.main:main"
-
-[project.optional-dependencies]
-dev = [
-    "black~=24.4.2",
-    "pre-commit~=3.4.0",
-    "pytest~=7.4.2",
-    "ruff~=0.5.0"
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "src"
 ]
 
-[tool.hatch.envs.dev]
-features = [
-    "dev"
-]
+[tool.ruff]
+line-length = 88
 
 [tool.ruff.lint]
 select = [
@@ -64,8 +66,3 @@ ignore = [
     # whitespace-before-punctuation
     "E203",
 ]
-
-[tool.mypy]
-exclude= 'tests'
-strict = true
-ignore_missing_imports = true
