@@ -65,7 +65,10 @@ If you see errors, it is likely that you did not rename the `src/your_cool_proje
 ### 3. Set up `pre-commit`
 
 Once your project is installed, you can set up `pre-commit`. 
-This small helper program runs a suite of additional tools to lint your code, perform checks, and run tests **BEFORE** you commit your code.
+This small helper program runs a suite of additional tools to lint your code and perform checks using [ruff](https://docs.astral.sh/ruff/), and run tests using [pytest](https://docs.pytest.org/en/stable/).
+From now on, *before* each commit, these programs will run and cross-check your code.
+You can override the checks with `git commit -m "<your message>" --no-verify`.
+
 You can adjust the programs by editing [.pre-commit-config](./.pre-commit-config.yaml) or changing their settings in the [pyproject.toml](./pyproject.toml) file.
 
 To set up `pre-commit`, run:
@@ -74,11 +77,18 @@ To set up `pre-commit`, run:
 uv run pre-commit install
 ```
 
-From now on, checks will run on every commit. 
-You can override the checks with `git commit -m "<your message>" --no-verify`.
+### 4. Check CI/CD
 
+Besides `pre-commit`, it is good practice to set up a [CI/CD pipeline](https://en.wikipedia.org/wiki/CI/CD), using GitHub Actions.
+In a nutshell, this pipeline automatically performs tests to check the integrity of your code (e.g. is the installation working, do all unit tests pass).
 
-### 4. Adjust the metadata files
+This repository provides a minimal [CI/CD pipeline](.github/cicd.yml) that uses the latest Python version to install your package and runs your tests. 
+This will happen on every pull request and push to the main branch.
+
+This runs out of the box - no need to adjust anything. 
+In the future, you may want to implement more sophisticated CI/CD steps.
+
+### 5. Adjust the metadata files
 
 Now that the basics are set up, it is time to adjust the metadata files. 
 These are extremely important from the perspective of research software following FAIR (Findable, Accessible, Interoperable, Reusable) principles.
@@ -117,74 +127,43 @@ You can easily create your own `CITATION.cff` file using [CFF INIT](https://cita
 
 ##### TO DO
 
-- [ ] Replace the current dummy `CITATION.cff` file with your own.
+- [ ] Replace the current dummy [CITATION.cff](CITATION.cff) file with your own.
 
 ##### CHANGELOG
 
 [Keeping a changelog](https://keepachangelog.com/en/1.1.0/) is essential for letting people know what has changed between versions.
 Nobody likes to look at Git commit messages to figure out why their code does not work anymore.
 
+##### TO DO
+
+- [ ] Replace the current [CHANGELOG](CHANGELOG.md) file with your own.
+
+##### CONTRIBUTING and CODE OF CONDUCT
+
+Coding is more fun when done collaboratively. 
+Still, it is important to clarify the terms of conditions for participation. 
+This is easiest done by providing two files: a [CONTRIBUTING](CONTRIBUTING.md) file that specifies technical details, and a [CODE OF CONDUCT](CODE_OF_CONDUCT.md) that clarifies the conditions for participation.
+It is also perfectly fine to specify that the project is developed solo and that no participation is desired.
+
+In the **{Medema-Group}**, we provide a organization-level [CODE_OF_CONDUCT.md](https://github.com/medema-group/.github/blob/main/CODE_OF_CONDUCT.md) that can be referenced.
+
+##### TO DO
+
+- [ ] Replace the current [CODE OF CONDUCT](CODE_OF_CONDUCT.md) and [CONTRIBUTING](CONTRIBUTING.md) files with your own.
 
 
+### 6. Conclusion
 
+That's it! You have made it through the setup of the repository!
+You have now a production-ready project setup and can start with the coding!
 
-### TODO: continue here
+There are of course many additional things you can do to make your project shine, for instance:
 
+- Subclass with [Pydantic](https://docs.pydantic.dev/latest/) to benefit from an extensive data validation library.
+- Implement type checking with [MyPy](https://mypy-lang.org/) to make your code more readable.
+- Build auto-documentation using [Sphinx](https://www.sphinx-doc.org/en/master/)
+- ...
 
-## Installation
+## Attribution
 
-### For users
-
-- Install `python3`
-- Install `hatch` using one of the methods described [here](https://hatch.pypa.io/1.12/install/)
-- Download or clone this repository
-- Run `hatch -v env create`
-
-### For developers
-
-- Install `python3`
-- Install `hatch` using one of the methods described [here](https://hatch.pypa.io/1.12/install/)
-- Download or clone this repository
-- Run `hatch -v env create dev`. This will download and install the appropriate Python version and any required packages
-- Run `hatch run dev:pre-commit install`. This will set up `pre-commit`
-
-## Quick Start
-
-### For users
-
-- `hatch run modern_python`
-
-### For developers
-
-- `hatch run dev:modern_python`
-
-## Remove package
-
-### For users
-
-- `hatch env remove`
-
-### For developers
-
-- `hatch env remove dev`
-
-## Background
-
-Python3 is one of most popular languages in scientific programming.
-While its flexible syntax is great for beginners, this can become a issue for larger projects.
-Therefore, the community has started to adopt a number of best practices to make working on larger, multi-person projects more convenient.
-Some of these best practices have been incorporated in auxiliary programs (from here: 'plugins') that provide capabilities **linting**, **formatting**, **type hinting**, and **testing**.
-
-### What is included in this repo?
-
-- A basic project directory structure with some placeholder Python files (`modern_python`, `tests`)
-- A set of standard files (in capital letters, e.g. LICENSE, CHANGELOG) for metadata about the repository
-- A `pyproject.toml` file that manages metadata, versioning, dependencies, environments, and plugins. This file is also used by `hatch` for setting up environments (`default`, `dev`), download and installation of dependencies.
-- A `.pre-commit-config.yaml` file that manages the plugins for linting (`ruff-check`), formatting (`ruff-format`), type hinting (`mypy`), and testing (`pytest`). If `pre-commit` is activated, this suite of programs is performed with each `git commmit`.
-
-### Who is this repo not for?
-
-For Python projects not in version control (e.g. single-use scripts), such an advanced setup is likely not necessary. 
-However, once a project becomes more elaborate, it is often useful to give it at least a minimum of formalism.
-This repo can help to reduce the time to do so, since it only requires a minimum of adaption.
-
+This repository was conceptualized and created by [Mitja M. Zdouc](https://mmzdouc.github.io/) and released to the public domain under the [Unlicense](LICENSE).
