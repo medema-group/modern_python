@@ -79,7 +79,7 @@ uv run pre-commit install
 Besides `pre-commit`, it is good practice to set up a [CI/CD pipeline](https://en.wikipedia.org/wiki/CI/CD), using GitHub Actions.
 In a nutshell, this pipeline automatically performs tests to check the integrity of your code (e.g. is the installation working, do all unit tests pass).
 
-This repository provides a minimal [CI/CD pipeline](.github/cicd.yml) that uses the latest Python version to install your package and runs your tests. 
+This repository provides a minimal [CI/CD pipeline](.github/workflows/cicd.yml) that uses the latest Python version to install your package and runs your tests. 
 This will happen on every pull request and push to the main branch.
 
 This runs out of the box - no need to adjust anything. 
