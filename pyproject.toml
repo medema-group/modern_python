@@ -1,6 +1,6 @@
 [project]
 name = "your_cool_project"
-version = "2.0.0"
+version = "1.1.1"
 description = "Example repository demonstrating a modern Python project setup"
 readme = "README.md"
 requires-python = ">=3.12"
